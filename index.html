@@ -148,6 +148,116 @@
         <h1>Gemini CLI Setup Guide</h1>
         <p class="subtitle">Complete installation and MCP configuration for Windows</p>
 
+        <!-- Agentic AI Section -->
+        <div class="section">
+            <h2>Understanding Agentic AI</h2>
+            
+            <h3>What is Agentic AI?</h3>
+            <p>Agentic AI refers to artificial intelligence systems that can autonomously perform tasks, make decisions, and take actions on behalf of users. Unlike traditional AI that simply responds to prompts, agentic AI can:</p>
+            <ul>
+                <li>Plan and execute multi-step workflows</li>
+                <li>Use tools and APIs to interact with external systems</li>
+                <li>Make decisions based on context and goals</li>
+                <li>Adapt to changing conditions in real-time</li>
+                <li>Learn from feedback and improve over time</li>
+            </ul>
+
+            <h3>The Goal of Agentic AI</h3>
+            <p>The primary goal is to automate complex workflows and augment human capabilities by:</p>
+            <ul>
+                <li><strong>Reducing repetitive tasks:</strong> Automating routine work that consumes valuable time</li>
+                <li><strong>Enhancing productivity:</strong> Allowing humans to focus on strategic, creative work</li>
+                <li><strong>Improving accuracy:</strong> Minimizing human error in data-heavy tasks</li>
+                <li><strong>Enabling scalability:</strong> Handling multiple tasks simultaneously without fatigue</li>
+                <li><strong>Bridging systems:</strong> Connecting different tools and platforms seamlessly</li>
+            </ul>
+
+            <h3>Day-to-Day Office Applications</h3>
+            <p>Agentic AI can transform your daily work routine:</p>
+            
+            <div class="note">
+                <div class="note-title">Project Management</div>
+                <p>Automatically update task boards, schedule meetings based on availability, send status updates, and track project milestones across multiple platforms.</p>
+            </div>
+
+            <div class="note">
+                <div class="note-title">Email & Communication</div>
+                <p>Draft responses, categorize messages, schedule follow-ups, extract action items, and maintain communication templates.</p>
+            </div>
+
+            <div class="note">
+                <div class="note-title">Data Analysis</div>
+                <p>Pull data from multiple sources, generate reports, create visualizations, identify trends, and provide actionable insights.</p>
+            </div>
+
+            <div class="note">
+                <div class="note-title">Content Creation</div>
+                <p>Generate marketing materials, write documentation, create presentations, design graphics, and maintain brand consistency.</p>
+            </div>
+
+            <div class="note">
+                <div class="note-title">Research & Intelligence</div>
+                <p>Gather market data, monitor competitors, track industry trends, summarize documents, and curate relevant information.</p>
+            </div>
+
+            <h3>Why Learn Agentic AI?</h3>
+            <ul>
+                <li><strong>Career Advancement:</strong> AI proficiency is becoming essential across industries</li>
+                <li><strong>Competitive Edge:</strong> Early adopters gain significant productivity advantages</li>
+                <li><strong>Future-Proofing:</strong> Understanding AI prepares you for the evolving workplace</li>
+                <li><strong>Innovation Catalyst:</strong> Enables you to create novel solutions to business problems</li>
+                <li><strong>Cost Efficiency:</strong> Automate expensive processes and reduce operational overhead</li>
+                <li><strong>Scalable Impact:</strong> Multiply your output without proportional time investment</li>
+            </ul>
+
+            <h3>Enterprise Use Cases</h3>
+            
+            <p><strong>Sales & Marketing:</strong></p>
+            <ul>
+                <li>Lead qualification and nurturing campaigns</li>
+                <li>Personalized email outreach at scale</li>
+                <li>Social media content scheduling and monitoring</li>
+                <li>Competitive analysis and market research</li>
+                <li>Campaign performance tracking and optimization</li>
+            </ul>
+
+            <p><strong>Operations & Procurement:</strong></p>
+            <ul>
+                <li>Vendor research and comparison</li>
+                <li>Purchase order generation and tracking</li>
+                <li>Inventory monitoring and reordering</li>
+                <li>Contract analysis and compliance checking</li>
+                <li>Supply chain optimization</li>
+            </ul>
+
+            <p><strong>Human Resources:</strong></p>
+            <ul>
+                <li>Resume screening and candidate matching</li>
+                <li>Interview scheduling and coordination</li>
+                <li>Onboarding workflow automation</li>
+                <li>Employee data management</li>
+                <li>Performance review compilation</li>
+            </ul>
+
+            <p><strong>Customer Service:</strong></p>
+            <ul>
+                <li>Ticket triage and routing</li>
+                <li>Knowledge base maintenance</li>
+                <li>Customer sentiment analysis</li>
+                <li>Response template generation</li>
+                <li>Escalation management</li>
+            </ul>
+
+            <p><strong>Finance & Accounting:</strong></p>
+            <ul>
+                <li>Invoice processing and reconciliation</li>
+                <li>Expense report validation</li>
+                <li>Financial data aggregation</li>
+                <li>Budget tracking and alerts</li>
+                <li>Compliance documentation</li>
+            </ul>
+        </div>
+
         <!-- Prerequisites Section -->
         <div class="section">
             <h2>Prerequisites</h2>
@@ -289,7 +399,118 @@ cd %USERPROFILE%\.gemini</code></pre>
             </div>
 
             <div class="step">
-                <h3><span class="step-number">6</span>Verify MCP Configuration</h3>
+                <h3><span class="step-number">6</span>Configure Chrome MCP</h3>
+                <p>Chrome MCP enables browser automation and web interaction capabilities.</p>
+                
+                <p><strong>Installation:</strong></p>
+                <pre><code>npm install -g @modelcontextprotocol/server-chrome</code></pre>
+                
+                <p><strong>Update your mcp_config.json:</strong></p>
+                <pre><code>{
+  "mcpServers": {
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "apiKey": "YOUR_FIGMA_API_KEY"
+    },
+    "canva": {
+      "url": "https://mcp.canva.com/mcp",
+      "apiKey": "YOUR_CANVA_API_KEY"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "apiKey": "YOUR_NOTION_API_KEY"
+    },
+    "chrome": {
+      "command": "mcp-server-chrome",
+      "args": ["--headless"]
+    }
+  }
+}</code></pre>
+
+                <h3 style="margin-top: 30px;">Chrome MCP Use Cases</h3>
+                
+                <p><strong>Procurement & Vendor Research:</strong></p>
+                <ul>
+                    <li><strong>Automated Web Indexing:</strong> Crawl supplier websites to extract product catalogs, pricing, specifications, and availability</li>
+                    <li><strong>Price Monitoring:</strong> Track competitor pricing across multiple e-commerce platforms in real-time</li>
+                    <li><strong>Vendor Discovery:</strong> Search and evaluate potential suppliers based on criteria like location, certifications, and reviews</li>
+                    <li><strong>Compliance Checking:</strong> Verify vendor certifications, safety data sheets, and regulatory compliance documentation</li>
+                    <li><strong>RFQ Automation:</strong> Fill out request-for-quote forms across multiple vendor portals automatically</li>
+                </ul>
+
+                <p><strong>Social Media Management:</strong></p>
+                <ul>
+                    <li><strong>Content Publishing:</strong> Post updates across LinkedIn, Twitter, Facebook simultaneously with platform-specific formatting</li>
+                    <li><strong>Engagement Monitoring:</strong> Track mentions, comments, and engagement metrics across platforms</li>
+                    <li><strong>Competitor Analysis:</strong> Monitor competitor social media activity, posting frequency, and audience engagement</li>
+                    <li><strong>Hashtag Research:</strong> Identify trending hashtags relevant to your industry</li>
+                    <li><strong>Influencer Discovery:</strong> Find and evaluate potential brand ambassadors based on reach and engagement</li>
+                </ul>
+
+                <p><strong>Event-Driven Marketing:</strong></p>
+                <ul>
+                    <li><strong>Real-Time Event Monitoring:</strong> Track breaking news, industry events, conferences, and trending topics</li>
+                    <li><strong>Dynamic Content Generation:</strong> Create marketing materials that reference current events (e.g., "Join us at [Conference Name]")</li>
+                    <li><strong>Newsjacking:</strong> Identify relevant trending topics and quickly create timely content</li>
+                    <li><strong>Event-Based Campaigns:</strong> Automatically launch campaigns tied to holidays, product launches, or industry milestones</li>
+                    <li><strong>Sentiment Analysis:</strong> Monitor public reaction to events affecting your industry or brand</li>
+                </ul>
+
+                <p><strong>Market Intelligence:</strong></p>
+                <ul>
+                    <li><strong>Job Posting Analysis:</strong> Track competitor hiring trends to understand their strategic direction</li>
+                    <li><strong>News Aggregation:</strong> Compile industry news from multiple sources into digestible summaries</li>
+                    <li><strong>Patent Monitoring:</strong> Track new patent filings in your industry</li>
+                    <li><strong>Regulatory Updates:</strong> Monitor government and regulatory websites for policy changes</li>
+                    <li><strong>Customer Reviews:</strong> Aggregate and analyze customer feedback across review platforms</li>
+                </ul>
+
+                <p><strong>Lead Generation:</strong></p>
+                <ul>
+                    <li><strong>Contact Extraction:</strong> Gather prospect information from company websites and directories</li>
+                    <li><strong>Email Verification:</strong> Validate email addresses through web-based tools</li>
+                    <li><strong>Company Research:</strong> Build detailed profiles of target accounts</li>
+                    <li><strong>Technology Detection:</strong> Identify what technologies companies are using (CRM, marketing tools, etc.)</li>
+                    <li><strong>Funding Tracking:</strong> Monitor startup funding announcements and investment activity</li>
+                </ul>
+
+                <div class="note" style="margin-top: 20px;">
+                    <div class="note-title">Example: Procurement Workflow</div>
+                    <p>Using Gemini + Chrome MCP for procurement:</p>
+                    <pre><code>// Example conversation with Gemini
+"Search for industrial safety gloves suppliers in the EU 
+that meet EN 388 standards. Compare prices for 1000 units, 
+extract lead times, and create a comparison table in 
+my procurement spreadsheet."
+
+// Gemini will:
+1. Use Chrome to search relevant supplier websites
+2. Extract product specifications and pricing
+3. Verify certifications
+4. Compile data into structured format
+5. Update your tracking spreadsheet</code></pre>
+                </div>
+
+                <div class="note" style="margin-top: 20px;">
+                    <div class="note-title">Example: Event-Based Marketing</div>
+                    <p>Real-time marketing campaign creation:</p>
+                    <pre><code>// Example conversation with Gemini
+"Monitor tech news for any AI regulation announcements. 
+When detected, create a LinkedIn post positioning our 
+compliance software, design a Canva graphic, and draft 
+an email campaign to our enterprise segment."
+
+// Gemini will:
+1. Use Chrome to monitor news sources
+2. Detect relevant regulatory announcements
+3. Generate timely marketing copy
+4. Create visual assets in Canva
+5. Prepare email campaign materials</code></pre>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">7</span>Verify MCP Configuration</h3>
                 <p>Test your MCP setup by running:</p>
                 <pre><code>gemini --mcp-config=%USERPROFILE%\.gemini\mcp_config.json</code></pre>
                 <p>The CLI should load and recognize your configured MCP servers.</p>
@@ -321,6 +542,148 @@ cd %USERPROFILE%\.gemini</code></pre>
 
 // Access Notion data
 "Get my tasks from Notion"</code></pre>
+            </div>
+        </div>
+
+        <!-- Practical Workflows Section -->
+        <div class="section">
+            <h2>Practical Workflows with Gemini + MCP</h2>
+
+            <div class="step">
+                <h3>Workflow 1: Automated Procurement Research</h3>
+                <p><strong>Scenario:</strong> You need to source 500 laptop chargers for your office.</p>
+                <pre><code>You: "Find suppliers for USB-C laptop chargers (65W) in the US. 
+Compare prices for 500 units, check inventory availability, 
+and create a comparison table in my Notion procurement database."
+
+Gemini will:
+1. Use Chrome MCP to search supplier websites
+2. Extract pricing and availability data
+3. Verify product specifications
+4. Create a structured comparison in Notion
+5. Flag the best options based on price and lead time</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 2: Event-Based Marketing Campaign</h3>
+                <p><strong>Scenario:</strong> Your competitor just announced a major product recall.</p>
+                <pre><code>You: "Monitor tech news for product recalls in our industry. 
+When found, create a LinkedIn post highlighting our quality standards, 
+design a comparison infographic in Canva, and update our content 
+calendar in Notion."
+
+Gemini will:
+1. Use Chrome to monitor industry news sources
+2. Detect relevant recall announcements
+3. Generate appropriate marketing messaging
+4. Create visual assets in Canva
+5. Schedule the campaign in your content calendar</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 3: Social Media Management</h3>
+                <p><strong>Scenario:</strong> You need to maintain consistent social presence across platforms.</p>
+                <pre><code>You: "Create a week's worth of social media posts about our new 
+product launch. Post to LinkedIn, Twitter, and Instagram. 
+Use our brand guidelines from Figma and track performance 
+metrics in Notion."
+
+Gemini will:
+1. Access brand colors and fonts from Figma
+2. Generate platform-specific content variations
+3. Create visual assets in Canva
+4. Use Chrome to publish across platforms
+5. Set up tracking dashboard in Notion</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 4: Competitive Intelligence</h3>
+                <p><strong>Scenario:</strong> You need to track competitor movements weekly.</p>
+                <pre><code>You: "Every Monday, check competitor websites for new products, 
+pricing changes, and job postings. Summarize findings in a 
+Notion report with screenshots and analysis."
+
+Gemini will:
+1. Use Chrome to visit competitor websites
+2. Detect changes since last check
+3. Capture screenshots of new products
+4. Analyze pricing strategies
+5. Generate weekly intelligence report in Notion</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 5: Design Asset Management</h3>
+                <p><strong>Scenario:</strong> You need to create marketing materials for an upcoming webinar.</p>
+                <pre><code>You: "Pull our logo and brand colors from Figma. Create a webinar 
+announcement graphic in Canva, a LinkedIn event banner, and 
+email header. Save all assets to our Notion media library."
+
+Gemini will:
+1. Extract brand assets from Figma
+2. Generate designs in Canva for each format
+3. Ensure brand consistency across all materials
+4. Organize and tag assets in Notion
+5. Provide download links for immediate use</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 6: Market Research & Reporting</h3>
+                <p><strong>Scenario:</strong> You need a weekly market trends report.</p>
+                <pre><code>You: "Research current trends in AI automation tools. 
+Check pricing of top 5 competitors, read latest analyst reports, 
+and create a executive summary in Notion with charts in Canva."
+
+Gemini will:
+1. Use Chrome to gather market data
+2. Extract pricing from competitor websites
+3. Summarize analyst reports and news
+4. Create data visualizations in Canva
+5. Compile professional report in Notion</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 7: Content Repurposing</h3>
+                <p><strong>Scenario:</strong> Turn a blog post into multi-format content.</p>
+                <pre><code>You: "Take our latest blog post from Notion and create: 
+- 5 LinkedIn posts with graphics from Canva
+- 10 Twitter threads
+- Instagram carousel design in Canva
+- Email newsletter version
+Schedule everything for next week."
+
+Gemini will:
+1. Extract content from Notion blog post
+2. Adapt messaging for each platform
+3. Create platform-specific visuals in Canva
+4. Generate distribution schedule
+5. Prepare all assets for publishing</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Workflow 8: Real-Time Event Response</h3>
+                <p><strong>Scenario:</strong> Your industry has a major breaking news event.</p>
+                <pre><code>You: "Monitor news for [industry topic]. When significant news 
+breaks, immediately draft a thought leadership post, create 
+supporting graphics in Canva, and prepare a response email 
+to our customer base. Save everything to Notion for approval."
+
+Gemini will:
+1. Use Chrome to monitor news sources in real-time
+2. Detect breaking news relevant to your business
+3. Generate timely thought leadership content
+4. Create professional graphics
+5. Queue materials for review in Notion</code></pre>
+            </div>
+
+            <div class="note" style="margin-top: 30px;">
+                <div class="note-title">Pro Tips for Effective Workflows</div>
+                <ul>
+                    <li><strong>Be Specific:</strong> Provide clear instructions about formats, quantities, and desired outcomes</li>
+                    <li><strong>Set Boundaries:</strong> Define quality standards, brand guidelines, and approval processes</li>
+                    <li><strong>Iterate:</strong> Start with simple workflows and gradually add complexity</li>
+                    <li><strong>Monitor Results:</strong> Review outputs initially to ensure accuracy and quality</li>
+                    <li><strong>Create Templates:</strong> Save successful workflows as templates in Notion for reuse</li>
+                </ul>
             </div>
         </div>
 
