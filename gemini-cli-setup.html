@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gemini CLI Setup Guide - Windows</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #000000;
+            color: #ffffff;
+            font-family: 'Source Code Pro', monospace;
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #ffffff;
+        }
+
+        .subtitle {
+            font-size: 1rem;
+            color: #888888;
+            margin-bottom: 60px;
+            font-weight: 300;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin: 50px 0 20px 0;
+            color: #ffffff;
+            border-bottom: 1px solid #333333;
+            padding-bottom: 10px;
+        }
+
+        h3 {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin: 30px 0 15px 0;
+            color: #cccccc;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #cccccc;
+            font-weight: 300;
+        }
+
+        .step {
+            margin-bottom: 40px;
+        }
+
+        .step-number {
+            display: inline-block;
+            background: #ffffff;
+            color: #000000;
+            width: 30px;
+            height: 30px;
+            text-align: center;
+            line-height: 30px;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-weight: 600;
+        }
+
+        code {
+            background: #1a1a1a;
+            padding: 2px 8px;
+            border-radius: 3px;
+            font-size: 0.9em;
+            color: #ffffff;
+            border: 1px solid #333333;
+        }
+
+        pre {
+            background: #1a1a1a;
+            padding: 20px;
+            border-radius: 5px;
+            overflow-x: auto;
+            margin: 15px 0;
+            border: 1px solid #333333;
+        }
+
+        pre code {
+            background: none;
+            padding: 0;
+            border: none;
+            font-size: 0.85em;
+            display: block;
+        }
+
+        .note {
+            background: #1a1a1a;
+            border-left: 3px solid #666666;
+            padding: 15px 20px;
+            margin: 20px 0;
+        }
+
+        .note-title {
+            font-weight: 600;
+            color: #ffffff;
+            margin-bottom: 5px;
+        }
+
+        ul {
+            margin: 15px 0 15px 40px;
+            color: #cccccc;
+        }
+
+        li {
+            margin-bottom: 8px;
+            font-weight: 300;
+        }
+
+        a {
+            color: #ffffff;
+            text-decoration: underline;
+        }
+
+        a:hover {
+            color: #cccccc;
+        }
+
+        .section {
+            margin-bottom: 60px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gemini CLI Setup Guide</h1>
+        <p class="subtitle">Complete installation and MCP configuration for Windows</p>
+
+        <!-- Prerequisites Section -->
+        <div class="section">
+            <h2>Prerequisites</h2>
+            <ul>
+                <li>Windows 10 or later</li>
+                <li>Node.js 18.0.0 or higher</li>
+                <li>npm (comes with Node.js)</li>
+                <li>Google AI Studio API key</li>
+            </ul>
+        </div>
+
+        <!-- Installation Section -->
+        <div class="section">
+            <h2>Installation</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span>Install Node.js</h3>
+                <p>Download and install Node.js from the official website:</p>
+                <pre><code>https://nodejs.org/</code></pre>
+                <p>Verify installation by opening Command Prompt or PowerShell:</p>
+                <pre><code>node --version
+npm --version</code></pre>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span>Install Gemini CLI</h3>
+                <p>Open PowerShell or Command Prompt as Administrator and run:</p>
+                <pre><code>npm install -g @google/generative-ai-cli</code></pre>
+                <p>Verify installation:</p>
+                <pre><code>gemini --version</code></pre>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span>Get Your API Key</h3>
+                <p>Visit Google AI Studio to generate your API key:</p>
+                <pre><code>https://makersuite.google.com/app/apikey</code></pre>
+                <div class="note">
+                    <div class="note-title">Note</div>
+                    <p>Keep your API key secure and never share it publicly.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">4</span>Configure API Key</h3>
+                <p>Set your API key as an environment variable:</p>
+                <p><strong>PowerShell:</strong></p>
+                <pre><code>$env:GOOGLE_API_KEY="your-api-key-here"</code></pre>
+                <p><strong>Command Prompt:</strong></p>
+                <pre><code>set GOOGLE_API_KEY=your-api-key-here</code></pre>
+                <p><strong>Permanent (System Environment Variable):</strong></p>
+                <ul>
+                    <li>Open System Properties → Advanced → Environment Variables</li>
+                    <li>Click "New" under User variables</li>
+                    <li>Variable name: <code>GOOGLE_API_KEY</code></li>
+                    <li>Variable value: your API key</li>
+                    <li>Click OK and restart your terminal</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- MCP Setup Section -->
+        <div class="section">
+            <h2>MCP (Model Context Protocol) Setup</h2>
+
+            <div class="step">
+                <h3><span class="step-number">1</span>Create MCP Configuration Directory</h3>
+                <p>Create a directory for MCP configuration:</p>
+                <pre><code>mkdir %USERPROFILE%\.gemini
+cd %USERPROFILE%\.gemini</code></pre>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">2</span>Create MCP Config File</h3>
+                <p>Create a file named <code>mcp_config.json</code> in the <code>.gemini</code> directory:</p>
+                <pre><code>{
+  "mcpServers": {
+    "figma": {
+      "url": "https://mcp.figma.com/mcp",
+      "apiKey": "YOUR_FIGMA_API_KEY"
+    },
+    "canva": {
+      "url": "https://mcp.canva.com/mcp",
+      "apiKey": "YOUR_CANVA_API_KEY"
+    },
+    "notion": {
+      "url": "https://mcp.notion.com/mcp",
+      "apiKey": "YOUR_NOTION_API_KEY"
+    }
+  }
+}</code></pre>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">3</span>Configure Figma MCP</h3>
+                <p>Get your Figma API key:</p>
+                <ul>
+                    <li>Go to <a href="https://www.figma.com/developers/api" target="_blank">Figma API Settings</a></li>
+                    <li>Click "Generate new token"</li>
+                    <li>Copy the token</li>
+                    <li>Replace <code>YOUR_FIGMA_API_KEY</code> in the config file</li>
+                </ul>
+                <div class="note">
+                    <div class="note-title">Figma Permissions</div>
+                    <p>Ensure your Figma token has read access to the files you want to interact with.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">4</span>Configure Canva MCP</h3>
+                <p>Get your Canva API key:</p>
+                <ul>
+                    <li>Visit <a href="https://www.canva.com/developers" target="_blank">Canva Developers</a></li>
+                    <li>Create a new app or use an existing one</li>
+                    <li>Generate an API key</li>
+                    <li>Replace <code>YOUR_CANVA_API_KEY</code> in the config file</li>
+                </ul>
+                <div class="note">
+                    <div class="note-title">Canva Setup</div>
+                    <p>You may need to authenticate via OAuth for full access to Canva features.</p>
+                </div>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">5</span>Configure Notion MCP</h3>
+                <p>Get your Notion integration token:</p>
+                <ul>
+                    <li>Go to <a href="https://www.notion.so/my-integrations" target="_blank">Notion Integrations</a></li>
+                    <li>Click "New integration"</li>
+                    <li>Give it a name and select capabilities</li>
+                    <li>Copy the "Internal Integration Token"</li>
+                    <li>Replace <code>YOUR_NOTION_API_KEY</code> in the config file</li>
+                </ul>
+                <p><strong>Share pages with your integration:</strong></p>
+                <ul>
+                    <li>Open the Notion page you want to access</li>
+                    <li>Click "Share" → "Invite"</li>
+                    <li>Select your integration and grant access</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3><span class="step-number">6</span>Verify MCP Configuration</h3>
+                <p>Test your MCP setup by running:</p>
+                <pre><code>gemini --mcp-config=%USERPROFILE%\.gemini\mcp_config.json</code></pre>
+                <p>The CLI should load and recognize your configured MCP servers.</p>
+            </div>
+        </div>
+
+        <!-- Usage Section -->
+        <div class="section">
+            <h2>Basic Usage</h2>
+
+            <div class="step">
+                <h3>Start Gemini CLI</h3>
+                <pre><code>gemini</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Start with MCP Enabled</h3>
+                <pre><code>gemini --mcp-config=%USERPROFILE%\.gemini\mcp_config.json</code></pre>
+            </div>
+
+            <div class="step">
+                <h3>Example Commands</h3>
+                <p>Once in the CLI, you can interact with your MCP services:</p>
+                <pre><code>// Query Figma designs
+"Show me the latest designs from Figma"
+
+// Create Canva designs
+"Create a social media post in Canva"
+
+// Access Notion data
+"Get my tasks from Notion"</code></pre>
+            </div>
+        </div>
+
+        <!-- Troubleshooting Section -->
+        <div class="section">
+            <h2>Troubleshooting</h2>
+
+            <div class="step">
+                <h3>Command Not Found</h3>
+                <p>If <code>gemini</code> command is not recognized:</p>
+                <ul>
+                    <li>Restart your terminal</li>
+                    <li>Verify npm global bin path is in your PATH</li>
+                    <li>Run: <code>npm config get prefix</code> and ensure it's in your system PATH</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>API Key Issues</h3>
+                <p>If API authentication fails:</p>
+                <ul>
+                    <li>Verify your API key is correct</li>
+                    <li>Check environment variable is set: <code>echo %GOOGLE_API_KEY%</code></li>
+                    <li>Ensure no extra spaces or quotes in the key</li>
+                </ul>
+            </div>
+
+            <div class="step">
+                <h3>MCP Connection Issues</h3>
+                <p>If MCP servers fail to connect:</p>
+                <ul>
+                    <li>Verify JSON syntax in <code>mcp_config.json</code></li>
+                    <li>Check API keys for each service are valid</li>
+                    <li>Ensure you have granted necessary permissions in each service</li>
+                    <li>Check internet connection and firewall settings</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="note" style="margin-top: 60px;">
+            <div class="note-title">Additional Resources</div>
+            <p>For more information, visit:</p>
+            <ul>
+                <li><a href="https://ai.google.dev/docs" target="_blank">Google AI Documentation</a></li>
+                <li><a href="https://github.com/google/generative-ai-js" target="_blank">Gemini API GitHub</a></li>
+                <li><a href="https://modelcontextprotocol.io/" target="_blank">Model Context Protocol</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
